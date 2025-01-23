@@ -1,0 +1,22 @@
+# Node modules
+node_modules/
+
+# VitePress build çıktısı
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+
+# IDE dosyaları
+.idea/
+.vscode/
+
+# Sistem dosyaları
+.DS_Store
+Thumbs.db
+
+# Environment dosyaları
+.env
+.env.*
+deploy.sh
+deploy-test.sh
+
+package-lock.json
