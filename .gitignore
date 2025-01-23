@@ -18,5 +18,3 @@ Thumbs.db
 .env.*
 deploy.sh
 deploy-test.sh
-
-package-lock.json
