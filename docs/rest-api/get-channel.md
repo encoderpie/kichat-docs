@@ -1,29 +1,33 @@
-# Get Channel Information
+---
+aside: false
+outline: false
+title: Get Channel
+---
 
-This endpoint retrieves information about a specific channel on kick.com.
+# Get Channel
 
-## Request
+This endpoint allows you to retrieve detailed information about any channel on the Kick platform.
 
-::: tip Method
-GET
-:::
+<script setup>
+import spec from '../public/openapi.json'
 
-```http
-https://api.kichat.dev/api/v2/channels/{channelName}
-```
+const baseUrl = 'https://api.kichat.dev'
+const endpoint = '/api/v2/channels/{channelName}'
 
-Replace `{channelName}` with the channel username you want to get information about.
+// Update the Endpoint URL
+spec.servers = [{ url: baseUrl }]
 
-### Example Request
+// Add an example value for channelName
+spec.paths['/api/v2/channels/{channelName}'].get.parameters[0].example = 'xqc'
+</script>
 
-```http
-GET https://api.kichat.dev/api/v2/channels/ENTER A CHANNEL NAME
-```
-
-## Response
-
-The server will return channel information in JSON format.
-
-::: info
-Detailed response format and examples will be added soon
-::: 
+<ClientOnly>
+  <OASpec 
+    :spec="spec" 
+    operation="getChannel" 
+    :tryText="'Try It'" 
+    :serverUrl="baseUrl"
+    :hideInfo="true"
+    :hideServers="true"
+  />
+</ClientOnly>

@@ -7,7 +7,7 @@ hero:
   text: "Acts as a proxy between your project and kick.com"
   # tagline: Alternative API Proxy for Kick.com
 
-  tagline: Kichat API's currently in preview. The full version will be available soon with additional features and improvements.
+  tagline: Kichat API is now available! New features and documentation coming soon!
   actions:
     - theme: brand
       text: Get Started

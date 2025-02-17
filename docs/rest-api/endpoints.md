@@ -40,7 +40,7 @@ const categories = computed(() => {
 
 const filteredEndpoints = computed(() => {
   const query = searchQuery.value.toLowerCase()
-  return endpoints.value.filter(endpoint => {
+  let filtered = endpoints.value.filter(endpoint => {
     const matchesSearch = endpoint.path.toLowerCase().includes(query) ||
       endpoint.method.toLowerCase().includes(query) ||
       endpoint.description.toLowerCase().includes(query)
@@ -50,6 +50,18 @@ const filteredEndpoints = computed(() => {
     
     return matchesSearch && matchesCategory
   })
+
+  // /api/v2 ile başlayanları en üste al
+  filtered.sort((a, b) => {
+    const aStartsWithApiV2 = a.path.startsWith('/api/v2')
+    const bStartsWithApiV2 = b.path.startsWith('/api/v2')
+    
+    if (aStartsWithApiV2 && !bStartsWithApiV2) return -1
+    if (!aStartsWithApiV2 && bStartsWithApiV2) return 1
+    return 0
+  })
+
+  return filtered
 })
 
 const getBadgeType = (method) => {

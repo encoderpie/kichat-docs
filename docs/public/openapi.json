@@ -1,0 +1,34 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Kichat API",
+      "version": "1.0.0",
+      "description": "API documentation for Kichat proxy API"
+    },
+    "servers": [
+      {
+        "url": "https://api.kichat.dev"
+      }
+    ],
+    "paths": {
+      "/api/v2/channels/{channelName}": {
+        "get": {
+          "operationId": "getChannel",
+          "summary": "Get channel information",
+          "description": "Get channel information",
+          "parameters": [
+            {
+              "name": "channelName",
+              "in": "path",
+              "required": true,
+              "description": "Channel name to fetch",
+              "schema": {
+                "type": "string"
+              },
+              "example": "xqc"
+            }
+          ]
+        }
+      }
+    }
+}
