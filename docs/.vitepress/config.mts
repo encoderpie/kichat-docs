@@ -28,12 +28,12 @@ export default defineConfig({
           { text: 'Get Channel', link: '/rest-api/get-channel' }
         ]
       },
-      /* {
-        text: 'Chatroom Stream',
+      {
+        text: 'WebSocket',
         items: [
-          { text: 'API Examples1', link: '/chatroom/api-examples1' }
+          { text: 'Chatroom Stream', link: '/websocket/chatroom-stream' }
         ]
-      } */
+      },
     ],
 
     socialLinks: [
